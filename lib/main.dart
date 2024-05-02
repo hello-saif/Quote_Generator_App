@@ -1,5 +1,8 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
+import 'dart:math';
+
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(QuoteGeneratorApp());
@@ -39,6 +42,12 @@ class _QuotePageState extends State<QuotePage> {
     });
   }
 
+  void _shareQuote() {
+    Share.share(_currentQuote); // Share the current quote
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,16 +73,22 @@ class _QuotePageState extends State<QuotePage> {
                 style: const TextStyle(fontSize: 20),
               ),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple), // Change background color
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white), // Change text color
-              ),
-              onPressed: _generateQuote,
-              child: const Text('Generate Quote'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: _generateQuote,
+                 icon: const Icon(Icons.skip_next),
+                color: Colors.deepPurple,
+                ),
+                const SizedBox(width: 16),
+                IconButton(
+                  icon: const Icon(Icons.share), // Add share icon
+                  onPressed: _shareQuote,
+                  color: Colors.blue, // Change icon color
+                ),
+              ],
             ),
-
-
           ],
         ),
       ),
