@@ -14,3 +14,12 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+Personal Portfolio Website
+Create a personal portfolio showcasing your skills,
+projects, and resume. Use HTML for structure, CSS
+for styling, and add a touch of JavaScript for
+interactivity.
+Random Quote Generator
+Create an app that generates random quotes. Users can
+click a button to get a new quote, and you can include
+features like sharing the quote on social media.
